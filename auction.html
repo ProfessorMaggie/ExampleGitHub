@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>E*Auction!</title>
+<script language="Javascript" type="text/javascript" src="auction.js">
+</script>
+</head>
+
+<body>
+
+<script language="Javascript" type="text/javascript">
+	var auction=new Auction("Mars Rover Spirit, in 'slightly used' condition.",820000000.0);
+	document.write('<table><tr align="center"><td colspan="2"><h1>Welcome to E*Auction!</h1></td></tr>');
+	document.write('<tr valign="top"><td><table><tr valign="top"><td id="bigPic"><img id="auctionImage" src="Spirit1.jpg" /></td><td><table><tr valign="top"><td><img id="thumbnailOne" src="Spirit1Thumbnail.jpg" /></td></tr><tr valign="top"><td><img id="thumbnailTwo" src="Spirit2Thumbnail.jpg" /></td></tr></table></td></tr></table></td>');
+	document.write('<td>');
+	document.write(auction.description+"<br />");
+	document.write("Minimum bid: $"+auction.minBid+"<br />");
+	document.write("Number of bids: <span id='numBids'>"+auction.bidHistory.length+"</span><br />");
+	if (auction.bidHistory.length!=0)
+		document.write("Current high bid: <span id='highBid'>"+auction.bidHistory[auction.bidHistory.length-1].amt+"</span><br />");
+	else
+		document.write("Current high bid: <span id='highBid'>-</span> <br />");
+</script>
+
+<form>
+Account number: <input id="acctNum" type="text" name="account" /><br />
+Bid Amount: $ <input id="bidAmt" type="text" name="bid" /><br />
+<input id="bidButton" type="button" name="Submit" value="Submit bid" /><br />
+</form>
+<p id="bidHistory"></p>
+</td></tr></table>
+
+<script language="Javascript" type="text/javascript" src="auctionHandlers.js">
+</script>
+
+</body>
+</html>
